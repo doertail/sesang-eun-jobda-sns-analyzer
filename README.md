@@ -63,7 +63,7 @@
 ## 6. 참고 자료/링크
 
 - (관련 논문, 블로그, API 문서 등)
-
+Inferring the strength of social ties: a community-driven approach
   
 
 ## 7. 피드백/회고
