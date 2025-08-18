@@ -1,0 +1,3 @@
+instaloader
+pytest
+python-dotenv
