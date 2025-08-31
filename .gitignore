@@ -209,3 +209,6 @@ __marimo__/
 # Gemini 
 gemini.md
 .env
+
+# MAC
+.DS_Store
