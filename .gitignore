@@ -212,3 +212,10 @@ gemini.md
 
 # MAC
 .DS_Store
+
+# Instagram Analyzer specific
+cache/
+logs/*.log
+logs/*.pid
+supervisor.sock
+*.session
