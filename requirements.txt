@@ -1,3 +1,12 @@
 instaloader
 pytest
 python-dotenv
+flask
+requests
+beautifulsoup4
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+plotly

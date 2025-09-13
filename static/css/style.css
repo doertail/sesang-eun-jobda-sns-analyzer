@@ -1,0 +1,279 @@
+/* Instagram 관계 분석기 스타일 */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+    border-bottom: none;
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+/* 관계 점수 원형 디스플레이 */
+.relationship-score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+    }
+}
+
+.score-circle small {
+    font-size: 14px;
+    margin-top: -5px;
+}
+
+/* 세부 점수 바 */
+.score-details {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.score-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.score-item span:first-child {
+    width: 120px;
+    font-weight: 500;
+    color: #495057;
+}
+
+.score-bar {
+    flex: 1;
+    height: 20px;
+    background: #e9ecef;
+    border-radius: 10px;
+    margin: 0 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.score-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    border-radius: 10px;
+    transition: width 1s ease-out;
+    width: 0%;
+}
+
+.score-item span:last-child {
+    width: 50px;
+    text-align: right;
+    font-weight: 600;
+    color: #007bff;
+}
+
+/* 공통 연결 목록 */
+.mutual-list {
+    max-height: 200px;
+    overflow-y: auto;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.mutual-user {
+    display: inline-block;
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 5px 10px;
+    margin: 3px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* 진행 상황 스타일 */
+#progressContainer {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.progress {
+    height: 25px;
+    border-radius: 15px;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    border-radius: 15px;
+}
+
+#progressText {
+    font-weight: 500;
+    color: #6c757d;
+}
+
+/* 버튼 스타일 */
+.btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn-lg {
+    padding: 15px 40px;
+    font-size: 16px;
+}
+
+/* 입력 필드 스타일 */
+.form-control {
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.input-group-text {
+    background: #007bff;
+    color: white;
+    border: 2px solid #007bff;
+    border-radius: 10px 0 0 10px;
+}
+
+/* 알림 스타일 */
+.alert {
+    border-radius: 10px;
+    border: none;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #d1ecf1, #bee5eb);
+    color: #0c5460;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .score-circle {
+        width: 100px;
+        height: 100px;
+        font-size: 20px;
+    }
+    
+    .score-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .score-item span:first-child {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .score-bar {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .score-item span:last-child {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* 애니메이션 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* 로딩 스피너 */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* 관계 수준별 색상 */
+.level-very-close {
+    background: linear-gradient(135deg, #28a745, #20c997) !important;
+}
+
+.level-close {
+    background: linear-gradient(135deg, #17a2b8, #138496) !important;
+}
+
+.level-somewhat {
+    background: linear-gradient(135deg, #ffc107, #e0a800) !important;
+}
+
+.level-weak {
+    background: linear-gradient(135deg, #fd7e14, #e55a00) !important;
+}
+
+.level-minimal {
+    background: linear-gradient(135deg, #6c757d, #545b62) !important;
+}
+
+.level-none {
+    background: linear-gradient(135deg, #dc3545, #c82333) !important;
+}
