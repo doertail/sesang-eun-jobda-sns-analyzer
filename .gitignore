@@ -218,4 +218,4 @@ cache/
 logs/*.log
 logs/*.pid
 supervisor.sock
-*.session
+*.session.DS_Store

@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 import json
 import time
+import random
 from typing import Dict, List, Set, Optional
 import logging
 
@@ -10,7 +11,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-load_dotenv()
+load_dotenv(override=True)
 
 class InstagramDataCollector:
     def __init__(self, use_login=False):
@@ -20,7 +21,7 @@ class InstagramDataCollector:
         Args:
             use_login (bool): 로그인 사용 여부 (공개 데이터만 수집할 경우 False)
         """
-        self.loader = instaloader.Instaloader()
+        self.loader = instaloader.Instaloader(sleep=True, user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36")
         self.use_login = use_login
         
         if use_login:
@@ -85,7 +86,7 @@ class InstagramDataCollector:
             logger.error(f"{username} 프로필 정보 수집 실패: {e}")
             return {}
     
-    def get_followers_list(self, username: str, limit: int = 100) -> Set[str]:
+    def get_followers_list(self, username: str, limit: int = 1000) -> Set[str]:
         """
         팔로워 목록 수집 (공개 계정만)
         
@@ -111,7 +112,7 @@ class InstagramDataCollector:
                     break
                 followers.add(follower.username)
                 count += 1
-                time.sleep(0.1)  # Rate limiting
+                time.sleep(random.uniform(0.5, 1.5))  # Rate limiting
             
             logger.info(f"{username}의 팔로워 {len(followers)}명을 수집했습니다.")
             return followers
@@ -120,7 +121,7 @@ class InstagramDataCollector:
             logger.error(f"{username} 팔로워 수집 실패: {e}")
             return set()
     
-    def get_following_list(self, username: str, limit: int = 100) -> Set[str]:
+    def get_following_list(self, username: str, limit: int = 1000) -> Set[str]:
         """
         팔로잉 목록 수집 (공개 계정만)
         
@@ -146,7 +147,7 @@ class InstagramDataCollector:
                     break
                 following.add(followee.username)
                 count += 1
-                time.sleep(0.1)  # Rate limiting
+                time.sleep(random.uniform(0.5, 1.5))  # Rate limiting
             
             logger.info(f"{username}의 팔로잉 {len(following)}명을 수집했습니다.")
             return following

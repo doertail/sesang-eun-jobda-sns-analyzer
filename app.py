@@ -21,7 +21,7 @@ app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'your-secret-key-here')
 
 # 전역 변수
-collector = InstagramDataCollector(use_login=False)
+collector = InstagramDataCollector(use_login=True)
 analyzer = RelationshipAnalyzer()
 
 # 캐시 디렉토리 설정

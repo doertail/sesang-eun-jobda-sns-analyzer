@@ -1,14 +1,18 @@
 # Instagram 관계 분석기
 
-![Status](https://img.shields.io/badge/Status-완료-brightgreen.svg)
+![Status](https://img.shields.io/badge/Status-중단-red.svg)
 ![Language](https://img.shields.io/badge/Python-3.12-blue.svg)
 ![Framework](https://img.shields.io/badge/Flask-3.1.2-green.svg)
+
+> **⚠️ 프로젝트 중단 알림**
+> 
+> 본 프로젝트는 인스타그램의 강화된 스크래핑 방지 정책(Rate-Limiting)으로 인해 핵심 기능이 정상적으로 동작하지 않습니다. 현재 `instaloader`를 이용한 실시간 데이터 수집이 불가능에 가까워, 프로젝트를 **중단** 상태로 전환합니다. 그동안의 개발 과정과 코드는 학습 및 연구 목적으로 보존됩니다.
 
 두 Instagram 사용자의 공개 정보를 분석하여 관계의 친밀도를 측정하는 웹 애플리케이션입니다.
 
 ## 🚀 실행 중인 애플리케이션
 
-**📱 [Instagram 관계 분석기 실행하기](https://5000-ifbmhjzo3vvyb0gyeidwg-6532622b.e2b.dev/)**
+**📱 [Instagram 관계 분석기 실행하기](https://5000-ifbmhjzo3vvyb0gyeidwg-6532622b.e2b.dev/) (현재 동작하지 않음)**
 
 ## ✨ 주요 기능
 
